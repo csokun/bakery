@@ -18,38 +18,10 @@ describe('Command::Order', () => {
         let ordered = Command.order(orders);
         
         expect(ordered).to.have.lengthOf(3);
-        expect(ordered[0].result).to.deep.equal([
-            {
-                "unit": 2,
-                "qty": 5,
-                "price": 8.99
-            }
-        ]);
         
-        expect(ordered[1].result).to.deep.equal([ 
-            {
-                "unit": 1,
-                "qty": 8,
-                "price": 24.85
-            }, {
-                "unit": 3,
-                "qty": 2,
-                "price": 9.95
-            }
-        ]);
-
-        expect(ordered[2].result).to.deep.equal([
-            {
-                "unit": 2,
-                "qty": 5,
-                "price": 9.95
-            },
-            {
-                "unit": 1,
-                "qty": 3,
-                "price": 5.95
-            }
-        ]);
+        expect(ordered[0].order.total).to.equal(17.98);
+        expect(ordered[1].order.total).to.equal(54.8);
+        expect(ordered[2].order.total).to.equal(25.85);
     });
 
     it(`Should reject order that can't fit packs model`, () => {

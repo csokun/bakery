@@ -11,7 +11,7 @@ const ITEMS = [
         code: 'MB11',
         name: 'Blueberry Muffin',
         bundles: [
-            { qty: 8, price: 24.85 },
+            { qty: 8, price: 24.95 },
             { qty: 5, price: 16.95 },
             { qty: 2, price: 9.95 }
         ]
