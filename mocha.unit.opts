@@ -1,0 +1,4 @@
+routes/**/__tests__/*.unit.js
+--bail
+--reporter spec
+--watch
