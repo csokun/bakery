@@ -20,7 +20,7 @@ System requirement:
 docker-compose up
 ```
 
-The application will be up and running on port `:3000`
+The application will be up and running on port `:3000` or visit live demo [https://bakery-shop.herokuapp.com/](https://bakery-shop.herokuapp.com/)
 
 ## API Interaction
 

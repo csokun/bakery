@@ -20,7 +20,8 @@
     "express": "^4.15.3",
     "express-validator": "^3.2.1",
     "helmet": "^3.6.1",
-    "object-path": "^0.11.4"
+    "object-path": "^0.11.4",
+    "pug": "^2.0.0-rc.3"
   },
   "devDependencies": {
     "chai": "^4.1.0",
