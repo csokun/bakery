@@ -63,7 +63,7 @@ Sample Response:
 }]
 ```
 
-### Heatheat
+### Heartbeat
 
 Navigate to `http://localhost:3000/ping` to check the service status.
 
