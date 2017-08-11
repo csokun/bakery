@@ -1,5 +1,6 @@
 const routers = require('express').Router();
 const Command = require('./commands');
+const Query = require('./queries');
 const Validator = require('./validators');
 
 /**
@@ -15,7 +16,13 @@ routers.post('/', (req, res, next) => {
         
         res.json(ordered);
     });
+});
 
+/**
+ * GET /products
+ */
+routers.get('/products', (req, res, next) => {
+    Query.getItems().then(items => res.json(items)).catch(next);
 });
 
 module.exports = routers;

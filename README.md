@@ -20,7 +20,9 @@ System requirement:
 docker-compose up
 ```
 
-The application will be up and running on port `:3000`
+The application will be up and running on port `:3000` or visit live demo [https://bakery-shop.herokuapp.com/](https://bakery-shop.herokuapp.com/)
+
+![Demo Screenshot](https://raw.githubusercontent.com/csokun/bakery/master/demo.PNG)
 
 ## API Interaction
 
@@ -61,7 +63,7 @@ Sample Response:
 }]
 ```
 
-### Heatheat
+### Heartbeat
 
 Navigate to `http://localhost:3000/ping` to check the service status.
 
