@@ -67,11 +67,20 @@ app.use(function (err, req, res, next) {
         req.getValidationResult().then(result => {
             if (!result.isEmpty()) {
                 res.status(400);
-                res.json({
+                return res.json({
                     message: 'Validation error',
                     errors: result.array()
                 });
             }
+            
+            res.status(err.status || 500);
+            res.json({
+                message: err.message,
+                // production error handler
+                // no stacktraces leaked to user
+                error: (app.get('env') === 'development' || app.get('env') === 'dev') ? err : {}
+            });
+
         });
     } else {
         res.status(err.status || 500);
