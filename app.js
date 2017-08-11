@@ -54,17 +54,15 @@ app.use(function (err, req, res, next) {
     if (res.headersSent)
         return next(err);
 
-    if (typeof req.getValidationResult == 'function') {
-        req.getValidationResult().then(result => {
-            if (!result.isEmpty()) {
-                res.status(400);
-                res.json({
-                    message: 'Validation error',
-                    errors: result.array()
-                });
-            }
-        });
-    } else {
+    req.getValidationResult().then(result => {
+        if (!result.isEmpty()) {
+            res.status(400);
+            return res.json({
+                message: 'Validation error',
+                errors: result.array()
+            });
+        }
+
         res.status(err.status || 500);
         res.json({
             message: err.message,
@@ -72,7 +70,7 @@ app.use(function (err, req, res, next) {
             // no stacktraces leaked to user
             error: (app.get('env') === 'development' || app.get('env') === 'dev') ? err : {}
         });
-    }
+    });
 });
 
 module.exports = app;
